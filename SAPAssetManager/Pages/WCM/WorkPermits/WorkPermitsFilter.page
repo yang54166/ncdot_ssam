@@ -1,0 +1,175 @@
+{
+	"ActionBar": {
+		"Items": "/SAPAssetManager/Pages/WCM/Fragments/FilterActionBarItems.fragment"
+	},
+	"Caption": "$(L,filter)",
+	"Result": "/SAPAssetManager/Rules/WCM/WorkPermitFilter/WorkPermitFilterResults.js",
+	"Controls": [
+		{
+			"_Type": "Control.Type.SectionedTable",
+			"Sections": [
+				{
+					"Controls": [
+						{
+							"AllowEmptySelection": false,
+							"Caption": "$(L,sort_by)",
+							"SortByItems": [
+								{
+									"ReturnValue": "Priority",
+									"DisplayValue": "$(L,priority)"
+								},
+								{
+									"ReturnValue": "ValidTo",
+									"DisplayValue": "$(L,wcm_valid_to)"
+								},
+								{
+									"ReturnValue": "WorkPermitDescr",
+									"DisplayValue": "$(L,description)"
+								},
+								{
+									"ReturnValue": "WCMApplication",
+									"DisplayValue": "$(L,wcm_work_permit_id)"
+								}
+							],
+							"_Name": "SortFilter",
+							"_Type": "Control.Type.FormCell.Sorter",
+							"IsEditable": true
+						}
+					],
+					"_Type": "Section.Type.FormCell",
+					"_Name": "FormCellContainerSectionFormCell0"
+				},
+				{
+					"Controls": [
+						{
+							"_Name": "UsageFilter",
+							"AllowMultipleSelection": true,
+							"AllowEmptySelection": true,
+							"Caption": "$(L,wcm_usage_type)",
+							"_Type": "Control.Type.FormCell.Filter",
+							"IsEditable": true,
+							"FilterProperty": "/SAPAssetManager/Rules/WCM/WorkPermitFilter/WorkPermitUsageFilterPropertyItems.js"
+						}
+					],
+					"_Type": "Section.Type.FormCell",
+					"_Name": "FormCellContainerSectionFormCell1"
+				},
+				{
+					"Controls": [
+						{
+							"_Type": "Fragment",
+							"Fragment": "/SAPAssetManager/Pages/WCM/Fragments/WorkRequirementsFilterItems.fragment",
+							"Properties": {
+								"_Name": "WorkType1Filter",
+								"Caption": "/SAPAssetManager/Rules/WCM/WorkPermitFilter/WorkTypeWorkReqName.js"
+							}
+						},
+						{
+							"_Type": "Fragment",
+							"Fragment": "/SAPAssetManager/Pages/WCM/Fragments/WorkRequirementsFilterItems.fragment",
+							"Properties": {
+								"_Name": "WorkType2Filter",
+								"Caption": "/SAPAssetManager/Rules/WCM/WorkPermitFilter/WorkTypeWorkReqName.js"
+							}
+						},
+						{
+							"_Type": "Fragment",
+							"Fragment": "/SAPAssetManager/Pages/WCM/Fragments/WorkRequirementsFilterItems.fragment",
+							"Properties": {
+								"_Name": "Requirements1Filter",
+								"Caption": "/SAPAssetManager/Rules/WCM/WorkPermitFilter/WorkTypeWorkReqName.js"
+							}
+						},
+						{
+							"_Type": "Fragment",
+							"Fragment": "/SAPAssetManager/Pages/WCM/Fragments/WorkRequirementsFilterItems.fragment",
+							"Properties": {
+								"_Name": "Requirements2Filter",
+								"Caption": "/SAPAssetManager/Rules/WCM/WorkPermitFilter/WorkTypeWorkReqName.js"
+							}
+						}
+					],
+					"_Type": "Section.Type.FormCell",
+					"_Name": "FormCellContainerSectionFormCell2"
+				},
+				{
+					"Controls": [
+						{
+							"_Name": "HeaderStatusFilter",
+							"AllowMultipleSelection": true,
+							"AllowEmptySelection": true,
+							"Caption": "$(L,wcm_main_status)",
+							"_Type": "Control.Type.FormCell.Filter",
+							"IsEditable": true,
+							"FilterProperty": "/SAPAssetManager/Rules/WCM/WorkPermitFilter/WCMSystemStatusFilterPropertyItems.js"
+						},
+						"/SAPAssetManager/Pages/WCM/Fragments/ApprovalStatusFilter.fragment"
+					],
+					"_Type": "Section.Type.FormCell",
+					"_Name": "FormCellContainerSectionFormCell3"
+				},
+				{
+					"Controls": [
+						"/SAPAssetManager/Pages/WCM/Fragments/PriorityFilter.fragment"
+					],
+					"_Type": "Section.Type.FormCell",
+					"_Name": "FormCellContainerSectionFormCell4"
+				},
+				{
+					"Controls": [
+						"/SAPAssetManager/Pages/WCM/Fragments/FunctionalLocationFilter.fragment",
+						"/SAPAssetManager/Pages/WCM/Fragments/EquipmentFilter.fragment"
+					],
+					"_Type": "Section.Type.FormCell",
+					"_Name": "FormCellContainerSectionFormCell5"
+				},
+				{
+					"Controls": {
+						"_Type": "Fragment",
+						"Fragment": "/SAPAssetManager/Pages/WCM/Fragments/ValidFromFilter.fragment",
+						"Properties": {
+							"#Name:ValidFromFilterVisibleSwitch": {
+								"OnValueChange": "/SAPAssetManager/Rules/WCM/WorkPermitFilter/WorkPermitsFilterPageDateVisibilityChanged.js"
+							}
+						}
+					},
+					"_Type": "Section.Type.FormCell",
+					"_Name": "FormCellContainerSectionFormCell6"
+				},
+				{
+					"Controls": {
+						"_Type": "Fragment",
+						"Fragment": "/SAPAssetManager/Pages/WCM/Fragments/ValidToFilter.fragment",
+						"Properties": {
+							"#Name:ValidToFilterVisibleSwitch": {
+								"OnValueChange": "/SAPAssetManager/Rules/WCM/WorkPermitFilter/WorkPermitsFilterPageDateVisibilityChanged.js"
+							}
+						}
+					},
+					"_Type": "Section.Type.FormCell",
+					"_Name": "FormCellContainerSectionFormCell7"
+				},
+				{
+					"Controls": [
+						{
+							"Title": "$(L,reset_all)",
+							"_Type": "Control.Type.FormCell.Button",
+							"ButtonType": "Text",
+							"_Name": "ResetButton",
+							"Alignment": "/SAPAssetManager/Rules/Common/Platform/ModalButtonAlign.js",
+							"OnPress": "/SAPAssetManager/Rules/WCM/WorkPermitFilter/WorkPermitFilterReset.js",
+							"Semantic": "Tint"
+						}
+					],
+					"_Type": "Section.Type.FormCell",
+					"_Name": "FormCellContainerSectionFormCell8"
+				}
+			],
+			"_Name": "FormCellContainer"
+		}
+	],
+	"OnLoaded": "/SAPAssetManager/Rules/WCM/WorkPermitFilter/WorkPermitFilterOnLoaded.js",
+	"_Type": "Page",
+	"_Name": "WorkPermitsFilterPage",
+	"PrefersLargeCaption": true
+}

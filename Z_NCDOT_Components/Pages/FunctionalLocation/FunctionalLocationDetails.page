@@ -1,0 +1,420 @@
+{
+	"Controls": [
+		{
+			"_Type": "Control.Type.SectionedTable",
+			"_Name": "SectionedTable",
+			"Sections": [
+				{
+					"ObjectHeader": {
+						"StatusText": "/SAPAssetManager/Rules/FunctionalLocation/FunctionalLocationStatus.js",
+						"BodyText": "{{#Property:FuncLocId}}",
+						"HeadlineText": "{{#Property:FuncLocDesc}}",
+						"Target": {
+							"EntitySet": "{@odata.readLink}",
+							"Service": "/SAPAssetManager/Services/AssetManager.service"
+						}
+					},
+					"_Type": "Section.Type.ObjectHeader",
+					"_Name": "FuntionalLocationDescriptionSection"
+				},
+				{
+					"_Type": "Fragment",
+					"Fragment": "/SAPAssetManager/Pages/Fragments/EPDVisualization/EPDVisualization.fragment",
+					"Properties": {}
+				},
+				{
+					"KeyAndValues": [
+						{
+							"Caption": "$(L, location)",
+							"LinkColor": "/SAPAssetManager/Rules/Common/LocationNavFormat.js",
+							"Value": "/SAPAssetManager/Rules/FunctionalLocation/FunctionalLocationLocationFormat.js",
+							"_Name": "KeyValue0",
+							"KeyName": "$(L, location)",
+							"Visible": "/SAPAssetManager/Rules/SideDrawer/IsFieldServiceTechnicianDisabled.js",
+							"OnPress": "/SAPAssetManager/Rules/FunctionalLocation/FunctionalLocationMapNav.js"
+						}
+					],
+					"MaxItemCount": 1,
+					"_Type": "Section.Type.KeyValue",
+					"DataSubscriptions": [
+						"Geometries",
+						"FuncLocGeometries"
+					],
+					"_Name": "FunctionalLocationLocationSection",
+					"EmptySection": {
+						"FooterVisible": false
+					},
+					"Layout": {
+						"NumberOfColumns": 1
+					}
+				},
+				{
+					"_Type": "Fragment",
+					"Fragment": "/SAPAssetManager/Pages/Fragments/Details/StatusesGridTable.fragment",
+					"Properties": {
+						"Header": {
+							"Caption": "$(L,statuses)"
+						},
+						"Target": "/SAPAssetManager/Rules/Common/DetailsPage/EquipFLocDetailsPageStatusesTable.js"
+					}
+				},
+				{
+					"KeyAndValues": [
+						{
+							"Value": "/SAPAssetManager/Rules/FunctionalLocation/FormatCategory.js",
+							"_Name": "KeyValue1",
+							"KeyName": "$(L,category)"
+						},
+						{
+							"Value": "/SAPAssetManager/Rules/FunctionalLocation/FormatEquipType.js",
+							"_Name": "KeyValue2",
+							"KeyName": "$(L,type)"
+						},
+						{
+							"Value": "/SAPAssetManager/Rules/FunctionalLocation/FormatModelNumber.js",
+							"_Name": "KeyValue3",
+							"KeyName": "$(L,model_no)"
+						},
+						{
+							"Value": "/SAPAssetManager/Rules/Equipment/EquipmentWorkCenter.js",
+							"_Name": "KeyValue4",
+							"KeyName": "$(L,workcenter)"
+						},
+						{
+							"Value": "/SAPAssetManager/Rules/FunctionalLocation/FormatPlanningPlant.js",
+							"_Name": "KeyValue5",
+							"KeyName": "$(L,plant)"
+						},
+						{
+							"Value": "/SAPAssetManager/Rules/FunctionalLocation/FormatLocation.js",
+							"_Name": "KeyValue6",
+							"KeyName": "$(L,location)"
+						},
+						{
+							"Value": "/SAPAssetManager/Rules/FunctionalLocation/FormatRoom.js",
+							"_Name": "KeyValue7",
+							"KeyName": "$(L,room)"
+						},
+						{
+							"Value": "/SAPAssetManager/Rules/FunctionalLocation/FormatSection.js",
+							"_Name": "KeyValue8",
+							"KeyName": "$(L,section)"
+						},
+						{
+							"Value": "/SAPAssetManager/Rules/FunctionalLocation/FormatManufacturer.js",
+							"_Name": "KeyValue9",
+							"KeyName": "$(L,manufacturer)",
+							"Visible": false
+						},
+						{
+							"Value": "/SAPAssetManager/Rules/FunctionalLocation/FormatInventoryNumber.js",
+							"_Name": "KeyValue10",
+							"KeyName": "$(L,inventory_no)",
+							"Visible": false
+						},
+						{
+							"Value": "/SAPAssetManager/Rules/FunctionalLocation/FormatPartNumber.js",
+							"_Name": "KeyValue11",
+							"KeyName": "$(L,part_no)",
+							"Visible": false
+						},
+						{
+							"Value": "/SAPAssetManager/Rules/FunctionalLocation/FormatSerialNumber.js",
+							"_Name": "KeyValue12",
+							"KeyName": "$(L,serial_no)",
+							"Visible": false
+						},
+						{
+							"Value": "/SAPAssetManager/Rules/FunctionalLocation/FormatSuperiorFLOC.js",
+							"_Name": "KeyValue13",
+							"KeyName": "$(L,superior_floc)"
+						},
+						{
+							"Value": "{ZZSortField}",
+							"_Name": "Z_SortField",
+							"KeyName": "$(L,'sortField')",
+							"Visible": true
+						}
+					],
+					"MaxItemCount": 1,
+					"_Type": "Section.Type.KeyValue",
+					"_Name": "KeyValueTable",
+					"Header": {
+						"_Name": "SectionHeader0",
+						"UseTopPadding": true,
+						"Caption": "$(L,functional_location_details)"
+					},
+					"EmptySection": {
+						"FooterVisible": false
+					},
+					"Layout": {
+						"NumberOfColumns": 2
+					}
+				},
+				{
+					"EmptySection": {
+						"Caption": "$(L,no_measuring_points_available)",
+						"FooterVisible": false
+					},
+					"DataSubscriptions": [
+						"MeasurementDocuments",
+						"MeasuringPoints"
+					],
+					"MaxItemCount": 3,
+					"Height": 300,
+					"AnalyticCard": {
+						"ChartType": "/SAPAssetManager/Rules/Analytics/AnalyticsChartCollectionType.js",
+						"Title": "{PointDesc}",
+						"IsTrendUpward": true,
+						"StatusText": "/SAPAssetManager/Rules/Analytics/AnalyticsReadingTimeStamp.js",
+						"Metric": "/SAPAssetManager/Rules/Analytics/AnalyticsTextView.js",
+						"TrailingUnit": "/SAPAssetManager/Rules/Analytics/AnalyticsUOM.js",
+						"SeriesTitle": "/SAPAssetManager/Rules/Analytics/AnalyticsSeriesTitles.js",
+						"SeriesColor": [
+							"#5899DA"
+						],
+						"DataSeries": {
+							"Data": "/SAPAssetManager/Rules/Analytics/AnalyticsDataSeries.js",
+							"CategoryTitles": "/SAPAssetManager/Rules/Analytics/AnalyticsCategoryTitles.js",
+							"CategoryLabelVisible": true,
+							"NumericLabelVisible": "/SAPAssetManager/Rules/Analytics/AnalyticsCategoryLabelIsVisible.js"
+						},
+						"OnPress": "/SAPAssetManager/Rules/Measurements/Points/MeasuringPointDetailsNav.js",
+						"_Type": "Card.Type.Chart"
+					},
+					"_Type": "Section.Type.AnalyticCardCollection",
+					"Target": {
+						"EntitySet": "{{#Property:@odata.readLink}}/MeasuringPoints",
+						"Service": "/SAPAssetManager/Services/AssetManager.service",
+						"QueryOptions": "$top=3&$orderby=SortField&$expand=MeasurementDocs,MeasurementDocs/MeasuringPoint&$select=Point,PointDesc,CharName,UoM,IsCounter,CodeGroup,CatalogType,MeasurementDocs/ReadingDate,MeasurementDocs/ReadingTime,MeasurementDocs/CodeGroup,MeasurementDocs/ValuationCode,MeasurementDocs/CodeShortText,MeasurementDocs/ReadingValue,MeasurementDocs/IsCounterReading,MeasurementDocs/IsCounterReading,MeasurementDocs/ReadingTimestamp,MeasurementDocs/CounterReadingDifference,MeasurementDocs/MeasurementDocNum,MeasurementDocs/MeasuringPoint/CharName,MeasurementDocs/MeasuringPoint/IsCounter"
+					},
+					"_Name": "FunctionalLocationMeasuringPointsSection",
+					"Header": {
+						"_Name": "SectionHeader1",
+						"AccessoryType": "none",
+						"UseTopPadding": true,
+						"Caption": "$(L,measuring_points)"
+					},
+					"Footer": {
+						"_Name": "SectionFooter0",
+						"Caption": "$(L,see_all_data)",
+						"AttributeLabel": "/SAPAssetManager/Rules/Measurements/Points/MeasuringPointsCount.js",
+						"AccessoryType": "disclosureIndicator",
+						"FooterStyle": "attribute",
+						"OnPress": "/SAPAssetManager/Actions/Measurements/MeasuringPointsListViewNav.action",
+						"UseBottomPadding": false
+					},
+					"Visible": "/SAPAssetManager/Rules/WCM/IsNotWCMOperator.js"
+				},
+				{
+					"_Type": "Fragment",
+					"Fragment": "/SAPAssetManager/Pages/Fragments/Equipment/ObjectTableSection.fragment",
+					"Properties": {
+						"Footer": {
+							"AttributeLabel": "/SAPAssetManager/Rules/Equipment/SubEquipment/SubEquipmentCount.js",
+							"Visible": "/SAPAssetManager/Rules/Equipment/SubEquipment/SubEquipmentShouldRenderFooter.js"
+						},
+						"Header": {
+							"UseTopPadding": true
+						},
+						"ObjectCell": {
+							"Icons": "/SAPAssetManager/Rules/Common/ListViewIconImages.js",
+							"Footnote": ""
+						},
+						"MaxItemCount": 2,
+						"Target": {
+							"EntitySet": "{{#Property:@odata.readLink}}/Equipments",
+							"QueryOptions": "$expand=ObjectStatus_Nav/SystemStatus_Nav,EquipDocuments,EquipDocuments/Document"
+						},
+						"_Name": "SubEquipmentSection",
+						"DataSubscriptions": [
+							"MyEquipments",
+							"MyEquipDocuments"
+						]
+					}
+				},
+				{
+					"_Type": "Fragment",
+					"Fragment": "/SAPAssetManager/Pages/Fragments/Documents/DocumentObjectTable.fragment",
+					"Properties": {
+						"Search": {
+							"Enabled": false
+						},
+						"Header": {
+							"Caption": "$(L,documents)"
+						},
+						"MaxItemCount": 2,
+						"Footer": {
+							"Caption": "$(L,see_all)",
+							"AccessoryType": "disclosureIndicator",
+							"FooterStyle": "attribute",
+							"AttributeLabel": "/SAPAssetManager/Rules/Documents/Count/DocumentsBDSCount.js",
+							"OnPress": "/SAPAssetManager/Actions/Documents/DocumentsBDSListNav.action",
+							"Visible": "/SAPAssetManager/Rules/Documents/Count/DocumentsBDSShouldRenderFooter.js"
+						},
+						"Visible": "/SAPAssetManager/Rules/Documents/DocumentsIsVisible.js",
+						"DataSubscriptions": [
+							"Documents",
+							"MyFuncLocDocuments"
+						]
+					}
+				},
+				{
+					"_Type": "Section.Type.SimplePropertyCollection",
+					"DataSubscriptions": [
+						"WorkOrderHistories",
+						"ChecklistBusObjects",
+						"NotificationHistories"
+					],
+					"_Name": "SimplePropertyCollectionSection",
+					"EmptySection": {
+						"FooterVisible": false
+					},
+					"SimplePropertyCells": [
+						{
+							"SimplePropertyCell": {
+								"Value": "/SAPAssetManager/Rules/Notes/NotesCount.js",
+								"_Name": "SectionSimplePropertyCell0",
+								"KeyName": "$(L,notes)",
+								"AccessoryType": "disclosureIndicator",
+								"OnPress": "/SAPAssetManager/Rules/Notes/NotesViewNav.js"
+							}
+						},
+						{
+							"SimplePropertyCell": {
+								"Value": "/SAPAssetManager/Rules/FunctionalLocation/FLOCWORelatedHistoriesCount.js",
+								"_Name": "SectionSimplePropertyCell1",
+								"KeyName": "$(L,related_work_orders)",
+								"AccessoryType": "disclosureIndicator",
+								"Visible": "/SAPAssetManager/Rules/Notifications/Details/WorkOrderHistoriesAreVisible.js",
+								"OnPress": "/SAPAssetManager/Actions/WorkOrders/WorkOrderRelatedHistoriesListViewNav.action"
+							}
+						},
+						{
+							"SimplePropertyCell": "/SAPAssetManager/Pages/WCM/Fragments/RelatedWorkPermitsFacet.fragment"
+						},
+						{
+							"SimplePropertyCell": "/SAPAssetManager/Pages/WCM/Fragments/RelatedCertificatesFacet.fragment"
+						},
+						{
+							"SimplePropertyCell": "/SAPAssetManager/Pages/Fragments/S4RelatedHistories/S4RelatedServiceConfirmationsFacet.fragment"
+						},
+						{
+							"SimplePropertyCell": "/SAPAssetManager/Pages/Fragments/S4RelatedHistories/S4RelatedServiceOrdersFacet.fragment"
+						},
+						{
+							"SimplePropertyCell": {
+								"_Name": "SectionSimplePropertyCell2",
+								"KeyName": "$(L,hierarchy)",
+								"AccessoryType": "disclosureIndicator",
+								"OnPress": "/SAPAssetManager/Rules/FunctionalLocation/FunctionalLocationHierarchyPageNav.js"
+							}
+						},
+						{
+							"SimplePropertyCell": {
+								"Value": "/SAPAssetManager/Rules/Notifications/RelatedNotifications/RelatedNotificationsCount.js",
+								"_Name": "SectionSimplePropertyCell3",
+								"KeyName": "$(L,related_notifications)",
+								"AccessoryType": "disclosureIndicator",
+								"Visible": "/SAPAssetManager/Rules/WorkOrders/Details/RelatedNotificationsAreVisible.js",
+								"OnPress": "/SAPAssetManager/Actions/Notifications/RelatedNotifications/RelatedNotificationsListViewNav.action"
+							}
+						},
+						{
+							"SimplePropertyCell": {
+								"Value": "/SAPAssetManager/Rules/BusinessPartners/BusinessPartnersCount.js",
+								"_Name": "SectionSimplePropertyCell4",
+								"KeyName": "$(L,business_partners)",
+								"AccessoryType": "disclosureIndicator",
+								"Visible": "/SAPAssetManager/Rules/WCM/IsNotWCMOperator.js",
+								"OnPress": "/SAPAssetManager/Actions/BusinessPartners/BusinessPartnersListViewNav.action"
+							}
+						},
+						{
+							"SimplePropertyCell": "/SAPAssetManager/Pages/Fragments/S4RelatedHistories/S4RelatedServiceRequestsFacet.fragment"
+						},
+						{
+							"SimplePropertyCell": {
+								"Value": "/SAPAssetManager/Rules/Classification/ClassificationCount.js",
+								"_Name": "SectionSimplePropertyCell5",
+								"KeyName": "$(L,classifications)",
+								"AccessoryType": "disclosureIndicator",
+								"Visible": "/SAPAssetManager/Rules/Classification/ClassificationIsVisible.js",
+								"OnPress": "/SAPAssetManager/Actions/Classification/ClassificationListViewNav.action"
+							}
+						},
+						{
+							"SimplePropertyCell": {
+								"Value": "/SAPAssetManager/Rules/Checklists/FunctionalLocation/FunctionalLocationChecklistsCount.js",
+								"_Name": "SectionSimplePropertyCell6",
+								"KeyName": "$(L,checklists)",
+								"AccessoryType": "disclosureIndicator",
+								"Visible": "/SAPAssetManager/Rules/Checklists/FunctionalLocation/FunctionalLocationDetailsShowChecklists.js",
+								"OnPress": "/SAPAssetManager/Rules/Checklists/ChecklistListViewNav.js"
+							}
+						},
+						{
+							"SimplePropertyCell": {
+								"_Name": "SectionSimplePropertyCell7",
+								"KeyName": "$(L,bom)",
+								"AccessoryType": "disclosureIndicator",
+								"Visible": "/SAPAssetManager/Rules/Material/BOM/BOMVisible.js",
+								"OnPress": "/SAPAssetManager/Rules/FunctionalLocation/FunctionalLocationBOMPageNav.js"
+							}
+						},
+						{
+							"SimplePropertyCell": {
+								"_Name": "SectionSimplePropertyCell8",
+								"KeyName": "$(L,linear_data)",
+								"AccessoryType": "disclosureIndicator",
+								"Visible": "/SAPAssetManager/Rules/LAM/LAMVisible.js",
+								"OnPress": "/SAPAssetManager/Rules/LAM/LAMNav.js"
+							}
+						}
+					],
+					"Layout": {
+						"NumberOfColumns": 2,
+						"MinimumInteritemSpacing": "$(PLT,66,0)"
+					}
+				}
+			]
+		}
+	],
+	"_Type": "Page",
+	"_Name": "FunctionalLocationDetails",
+	"Caption": "$(L,functional_location)",
+	"PrefersLargeCaption": true,
+	"ActionBar": {
+		"Items": [
+			"/SAPAssetManager/Pages/WCM/Fragments/AddNotificationToEquipFlocButton.fragment",
+			{
+				"_Name": "Z_FunclocToLemur",
+				"Caption": "Map",
+				"Icon": "sap-icon://map",
+				"Position": "Right",
+				"IsIconCircular": false,
+				"Visible": false,
+				"OnPress": "/Z_NCDOT_Components/Rules/LemurMap/NavigationTo/Z_SelectedFlocToLemurNav.js"
+			},
+			{
+				"_Name": "Edit",
+				"Caption": "",
+				"SystemItem": "Edit",
+				"Position": "Right",
+				"IsIconCircular": false,
+				"Visible": "/SAPAssetManager/Rules/FunctionalLocation/CreateUpdate/FunctionalLocationEditEnabled.js",
+				"OnPress": "/SAPAssetManager/Rules/FunctionalLocation/CreateUpdate/FunctionalLocationOpenEditPage.js"
+			},
+			{
+				"_Name": "FunctionalLocationOverflow",
+				"Caption": "",
+				"Icon": "$(PLT,/SAPAssetManager/Images/menuicon.png,/SAPAssetManager/Images/menuicon.android.png)",
+				"Position": "Right",
+				"IsIconCircular": false,
+				"Visible": "/SAPAssetManager/Rules/WCM/IsNotWCMOperator.js",
+				"OnPress": "/SAPAssetManager/Actions/FunctionalLocation/FunctionalLocationPopover.action"
+			}
+		],
+		"_Name": "ActionBar1"
+	}
+}

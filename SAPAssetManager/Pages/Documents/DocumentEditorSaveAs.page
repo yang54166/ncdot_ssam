@@ -1,0 +1,49 @@
+{
+	"Caption": "$(L,save_as)",
+	"ActionBar": {
+		"Items": [
+			{
+				"Position": "Right",
+				"Caption": "$(L,save)",
+				"OnPress": "/SAPAssetManager/Rules/Documents/DocumentEditorSaveAs.js"
+			}
+		]
+	},
+	"Controls": [
+		{
+			"_Type": "Control.Type.SectionedTable",
+			"Sections": [
+				{
+					"Controls": [
+						{
+							"Caption": "$(L,file_name)",
+							"PlaceHolder": "",
+							"Value": "/SAPAssetManager/Rules/Documents/DocumentEditorSaveAsFileName.js",
+							"IsEditable": true,
+							"IsVisible": true,
+							"IsAutoResizing": true,
+							"_Name": "FileName",
+							"_Type": "Control.Type.FormCell.SimpleProperty"
+						},
+						{
+							"Caption": "$(L,description)",
+							"PlaceHolder": "",
+							"Value": "/SAPAssetManager/Rules/Documents/DocumentEditorSaveAsDescription.js",
+							"IsEditable": true,
+							"IsVisible": true,
+							"IsAutoResizing": true,
+							"_Name": "Description",
+							"_Type": "Control.Type.FormCell.SimpleProperty"
+						}
+					],
+					"_Type": "Section.Type.FormCell",
+					"_Name": "FormCellContainerSectionFormCell0"
+				}
+			],
+			"_Name": "FormCellContainer"
+		}
+	],
+	"_Type": "Page",
+	"_Name": "DocumentEditorSaveAsPage",
+	"PrefersLargeCaption": true
+}

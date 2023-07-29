@@ -1,0 +1,31 @@
+{
+	"_Type": "Section.Type.Extension",
+	"Header": {
+		"_Name": "SectionHeader0",
+		"UseTopPadding": false
+	},
+	"Visible": false,
+	"EmptySection": {
+		"FooterVisible": false
+	},
+	"Height": 240,
+	"OnPress": "/SAPAssetManager/Actions/Extensions/MapNav.action",
+	"Module": "extension-MapFramework",
+	"Control": "MapViewExtension",
+	"Class": "MapViewExtension",
+	"ExtensionProperties": {
+		"Config": "/SAPAssetManager/Pages/Fragments/Map/MapConfigNoUserInteraction.fragment",
+		"TokenAuthentication": {
+			"Action": "/SAPAssetManager/Rules/Extensions/TokenRequest.js"
+		},
+		"MapToolsetIcons": [],
+		"BusinessObjects": [
+			"/SAPAssetManager/Pages/Fragments/Map/BusinessObjects/EquipmentBO.fragment",
+			"/SAPAssetManager/Pages/Fragments/Map/BusinessObjects/FunctionalLocation.fragment",
+			"/SAPAssetManager/Pages/Fragments/Map/BusinessObjects/NotificationBO.fragment",
+			"/SAPAssetManager/Pages/Fragments/Map/BusinessObjects/JobBO.fragment",
+			"/SAPAssetManager/Pages/Fragments/Map/BusinessObjects/RouteBO.fragment",
+			"/SAPAssetManager/Pages/Fragments/Map/BusinessObjects/RouteStopBO.fragment"
+		]
+	}
+}

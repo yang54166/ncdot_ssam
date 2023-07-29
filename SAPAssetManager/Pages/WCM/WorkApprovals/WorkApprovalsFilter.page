@@ -1,0 +1,164 @@
+{
+	"ActionBar": {
+		"Items": [
+			{
+				"Position": "Left",
+				"SystemItem": "Cancel",
+				"OnPress": "/SAPAssetManager/Actions/Page/CancelPage.action"
+			},
+			{
+				"Position": "Right",
+				"SystemItem": "/SAPAssetManager/Rules/Filter/FilterSystemItem.js",
+				"Caption": "/SAPAssetManager/Rules/Filter/FilterText.js",
+				"OnPress": "/SAPAssetManager/Rules/Filter/FilterDone.js"
+			}
+		]
+	},
+	"Caption": "$(L,filter)",
+	"Result": "/SAPAssetManager/Rules/WCM/WorkApprovals/List/WorkApprovalsListViewFilterResults.js",
+	"Controls": [
+		{
+			"_Type": "Control.Type.SectionedTable",
+			"Sections": [
+				{
+					"Controls": [
+						{
+							"AllowEmptySelection": false,
+							"Caption": "$(L,sort_by)",
+							"SortByItems": [
+								{
+									"ReturnValue": "ShortText",
+									"DisplayValue": "$(L,description)"
+								},
+								{
+									"ReturnValue": "ValidTo",
+									"DisplayValue": "$(L,wcm_valid_to)"
+								},
+								{
+									"ReturnValue": "WCMApproval",
+									"DisplayValue": "$(L,wcm_work_approval_id)"
+								}
+							],
+							"_Name": "SortFilter",
+							"_Type": "Control.Type.FormCell.Sorter",
+							"IsEditable": true
+						}
+					],
+					"_Type": "Section.Type.FormCell",
+					"_Name": "FormCellContainerSectionFormCell0"
+				},
+				{
+					"Controls": [
+						{
+							"_Type": "Fragment",
+							"Fragment": "/SAPAssetManager/Pages/WCM/Fragments/HeaderStatusFilter.fragment",
+							"Properties": {
+								"PickerItems": "/SAPAssetManager/Rules/WCM/WorkApprovals/List/WorkApprovalsHeaderStatuses.js"
+							}
+						}
+					],
+					"_Type": "Section.Type.FormCell",
+					"_Name": "FormCellContainerSectionFormCell1"
+				},
+				{
+					"Controls": [
+						{
+							"_Type": "Fragment",
+							"Fragment": "/SAPAssetManager/Pages/WCM/Fragments/FunctionalLocationFilter.fragment",
+							"Properties": {
+								"Value": "{FuncLoc}",
+								"FilterProperty": "FuncLoc"
+							}
+						},
+						{
+							"_Type": "Fragment",
+							"Fragment": "/SAPAssetManager/Pages/WCM/Fragments/EquipmentFilter.fragment",
+							"Properties": {
+								"Value": "{Equipment}",
+								"FilterProperty": "Equipment"
+							}
+						}
+					],
+					"_Type": "Section.Type.FormCell",
+					"_Name": "FormCellContainerSectionFormCell2"
+				},
+				{
+					"Controls": [
+						{
+							"_Type": "Control.Type.FormCell.Switch",
+							"_Name": "ValidFromFilterVisibleSwitch",
+							"Caption": "$(L,wcm_valid_from)",
+							"Value": false,
+							"OnValueChange": "/SAPAssetManager/Rules/WCM/WorkApprovals/List/WorkApprovalsFilterPageDateVisibilityChanged.js",
+							"IsVisible": true
+						},
+						{
+							"_Type": "Fragment",
+							"Fragment": "/SAPAssetManager/Pages/WCM/Fragments/DateFromFilter.fragment",
+							"Properties": {
+								"_Name": "ValidFromDatePickerStart"
+							}
+						},
+						{
+							"_Type": "Fragment",
+							"Fragment": "/SAPAssetManager/Pages/WCM/Fragments/DateToFilter.fragment",
+							"Properties": {
+								"_Name": "ValidFromDatePickerEnd"
+							}
+						}
+					],
+					"_Type": "Section.Type.FormCell",
+					"_Name": "FormCellContainerSectionFormCell3"
+				},
+				{
+					"Controls": [
+						{
+							"_Type": "Control.Type.FormCell.Switch",
+							"_Name": "ValidToFilterVisibleSwitch",
+							"Caption": "$(L,wcm_valid_to)",
+							"Value": false,
+							"OnValueChange": "/SAPAssetManager/Rules/WCM/WorkApprovals/List/WorkApprovalsFilterPageDateVisibilityChanged.js",
+							"IsVisible": true
+						},
+						{
+							"_Type": "Fragment",
+							"Fragment": "/SAPAssetManager/Pages/WCM/Fragments/DateFromFilter.fragment",
+							"Properties": {
+								"_Name": "ValidToDatePickerStart"
+							}
+						},
+						{
+							"_Type": "Fragment",
+							"Fragment": "/SAPAssetManager/Pages/WCM/Fragments/DateToFilter.fragment",
+							"Properties": {
+								"_Name": "ValidToDatePickerEnd"
+							}
+						}
+					],
+					"_Type": "Section.Type.FormCell",
+					"_Name": "FormCellContainerSectionFormCell4"
+				},
+				{
+					"Controls": [
+						{
+							"Title": "$(L,reset_all)",
+							"_Type": "Control.Type.FormCell.Button",
+							"ButtonType": "Text",
+							"_Name": "ResetButton",
+							"Alignment": "/SAPAssetManager/Rules/Common/Platform/ModalButtonAlign.js",
+							"OnPress": "/SAPAssetManager/Rules/WCM/WorkApprovals/List/WorkApprovalsFilterReset.js",
+							"Semantic": "Tint"
+						}
+					],
+					"_Type": "Section.Type.FormCell",
+					"_Name": "FormCellContainerSectionFormCell5"
+				}
+			],
+			"_Name": "FormCellContainer"
+		}
+	],
+	"_Type": "Page",
+	"_Name": "WorkApprovalsFilterPage",
+	"OnLoaded": "/SAPAssetManager/Rules/WCM/WorkApprovals/List/WorkApprovalsFilterOnLoaded.js",
+	"PrefersLargeCaption": true
+}

@@ -1,0 +1,69 @@
+{
+	"_Type": "Page",
+	"_Name": "ReminderCreateUpdatePage",
+	"OnLoaded": "/SAPAssetManager/Rules/Reminders/ReminderCreateUpdateOnPageLoad.js",
+	"ActionBar": {
+		"Items": [
+			{
+				"Position": "Left",
+				"SystemItem": "Cancel",
+				"OnPress": "/SAPAssetManager/Rules/Common/CheckForChangesBeforeCancel.js"
+			},
+			{
+				"Position": "Right",
+				"SystemItem": "$(PLT,'Done','')",
+				"Caption": "/SAPAssetManager/Rules/Common/Platform/DoneText.js",
+				"OnPress": "/SAPAssetManager/Rules/Reminders/ReminderCreateUpdateOnCommit.js"
+			}
+		]
+	},
+	"Controls": [
+		{
+			"_Type": "Control.Type.SectionedTable",
+			"Sections": [
+				{
+					"Controls": [
+						{
+							"Caption": "$(L,name)",
+							"PlaceHolder": "$(L,name)",
+							"Value": "",
+							"OnValueChange": "/SAPAssetManager/Rules/Common/Validation/ResetValidationOnInput.js",
+							"_Name": "Name",
+							"_Type": "Control.Type.FormCell.Title",
+							"IsEditable": true
+						},
+						{
+							"PlaceHolder": "$(L,description)",
+							"Value": "",
+							"OnValueChange": "/SAPAssetManager/Rules/Common/Validation/ResetValidationOnInput.js",
+							"IsAutoResizing": true,
+							"_Name": "Description",
+							"_Type": "Control.Type.FormCell.Note",
+							"Caption": "$(L,description)"
+						}
+					],
+					"_Type": "Section.Type.FormCell",
+					"_Name": "FormCellContainerSectionFormCell0"
+				},
+				{
+					"Controls": [
+						{
+							"Title": "$(L,delete)",
+							"OnPress": "/SAPAssetManager/Rules/Reminders/ReminderDelete.js",
+							"IsVisible": "/SAPAssetManager/Rules/Reminders/ReminderCreateUpdateDeleteIsEnabled.js",
+							"_Type": "Control.Type.FormCell.Button",
+							"ButtonType": "Text",
+							"Semantic": "Tint",
+							"_Name": "DiscardButton",
+							"Alignment": "/SAPAssetManager/Rules/Common/Platform/ModalButtonAlign.js"
+						}
+					],
+					"_Type": "Section.Type.FormCell",
+					"_Name": "FormCellContainerSectionFormCell1"
+				}
+			],
+			"_Name": "FormCellContainer"
+		}
+	],
+	"PrefersLargeCaption": true
+}

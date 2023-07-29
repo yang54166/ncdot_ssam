@@ -1,0 +1,206 @@
+{
+	"Controls": [
+		{
+			"DataSubscriptions": [
+				"LAMCharacteristicValues",
+				"MyEquipClassCharValues",
+				"MyFuncLocClassCharValues"
+			],
+			"_Type": "Control.Type.SectionedTable",
+			"_Name": "SectionedTable",
+			"Sections": [
+				{
+					"KeyAndValues": [
+						{
+							"Value": "/SAPAssetManager/Rules/Classification/Characteristics/CharacteristicValueDisplayCharDescription.js",
+							"_Name": "KeyValue0",
+							"KeyName": "$(L,name)"
+						},
+						{
+							"Value": "/SAPAssetManager/Rules/Classification/Characteristics/CharacteristicDisplayValueWithoutUOM.js",
+							"_Name": "KeyValue1",
+							"KeyName": "$(L,value)"
+						},
+						{
+							"Value": "/SAPAssetManager/Rules/Classification/Characteristics/CharacteristicValueDisplayCharValueDescription.js",
+							"_Name": "KeyValue2",
+							"KeyName": "$(L,description)"
+						},
+						{
+							"Value": "/SAPAssetManager/Rules/Classification/Characteristics/CharacteristicValueDisplayCharUOM.js",
+							"_Name": "KeyValue3",
+							"KeyName": "$(L,uom)"
+						},
+						{
+							"Value": "/SAPAssetManager/Rules/Classification/Characteristics/CharacteristicValueDisplayCharNumchars.js",
+							"_Name": "KeyValue4",
+							"KeyName": "$(L,characters)"
+						},
+						{
+							"Value": "/SAPAssetManager/Rules/Classification/Characteristics/CharacteristicValueDisplayCharDatatype.js",
+							"_Name": "KeyValue5",
+							"KeyName": "$(L,data_type)"
+						},
+						{
+							"Value": "/SAPAssetManager/Rules/Classification/Characteristics/CharacteristicValueDisplayCharDecimals.js",
+							"_Name": "KeyValue6",
+							"KeyName": "$(L,decimals)"
+						},
+						{
+							"Value": "/SAPAssetManager/Rules/Classification/Characteristics/CharacteristicValueDisplayRequired.js",
+							"_Name": "KeyValue7",
+							"KeyName": "$(L,required)"
+						}
+					],
+					"MaxItemCount": 1,
+					"_Type": "Section.Type.KeyValue",
+					"_Name": "KeyValueTable",
+					"Header": {
+						"_Name": "SectionHeader0",
+						"AccessoryType": "none",
+						"UseTopPadding": true,
+						"Caption": "$(L,details)"
+					},
+					"EmptySection": {
+						"FooterVisible": false
+					},
+					"Layout": {
+						"NumberOfColumns": 2
+					}
+				},
+				{
+					"Header": {
+						"DataTable": {
+							"Items": [
+								{
+									"NumberOfLines": 1,
+									"Style": "GridTableHeaderText"
+								},
+								{
+									"Text": "Characteristic Value",
+									"NumberOfLines": 1,
+									"Style": "GridTableHeaderText"
+								},
+								{
+									"Text": "$(L,start_point)",
+									"NumberOfLines": 1,
+									"Style": "GridTableHeaderText"
+								},
+								{
+									"Text": "$(L,end_point)",
+									"NumberOfLines": 1,
+									"Style": "GridTableHeaderText"
+								},
+								{
+									"Text": "$(L,length)",
+									"NumberOfLines": 1,
+									"Style": "GridTableHeaderText"
+								}
+							]
+						},
+						"_Name": "SectionDataTableHeader0",
+						"AccessoryType": "none",
+						"UseTopPadding": true
+					},
+					"Row": {
+						"Items": [
+							{
+								"DisplayType": "Text",
+								"EditType": "Text",
+								"NumberOfLines": 1,
+								"TextAlignment": "center"
+							},
+							{
+								"Value": "/SAPAssetManager/Rules/Classification/Characteristics/LAM/LAMCharValueFormat.js",
+								"DisplayType": "Text",
+								"EditType": "Text",
+								"NumberOfLines": 1,
+								"TextAlignment": "center",
+								"Styles": {
+									"Text": "GridTableRowText"
+								}
+							},
+							{
+								"Value": "/SAPAssetManager/Rules/LAM/LAMStartPointFormat.js",
+								"DisplayType": "Text",
+								"EditType": "Text",
+								"NumberOfLines": 1,
+								"TextAlignment": "center",
+								"Styles": {
+									"Text": "GridTableRowText"
+								}
+							},
+							{
+								"Value": "/SAPAssetManager/Rules/LAM/LAMEndPointFormat.js",
+								"DisplayType": "Text",
+								"EditType": "Text",
+								"NumberOfLines": 1,
+								"TextAlignment": "center",
+								"Styles": {
+									"Text": "GridTableRowText"
+								}
+							},
+							{
+								"Value": "/SAPAssetManager/Rules/LAM/LAMLengthFormat.js",
+								"DisplayType": "Text",
+								"EditType": "Text",
+								"NumberOfLines": 1,
+								"TextAlignment": "center",
+								"Styles": {
+									"Text": "GridTableRowText"
+								}
+							}
+						],
+						"Layout": {
+							"ColumnWidth": [
+								50,
+								250,
+								200,
+								200,
+								-1
+							]
+						},
+						"OnPress": "/SAPAssetManager/Rules/Classification/Characteristics/LAM/CharacteristicLAMValuesUpdateNav.js"
+					},
+					"_Type": "Section.Type.DataTable",
+					"Target": {
+						"EntitySet": "LAMCharacteristicValues",
+						"Service": "/SAPAssetManager/Services/AssetManager.service",
+						"QueryOptions": "/SAPAssetManager/Rules/Classification/Characteristics/LAM/CharacteristicLAMValueQueryOptions.js"
+					},
+					"_Name": "DataTableSection",
+					"Visible": "/SAPAssetManager/Rules/Classification/Characteristics/CharacteristicsLAMIsVisible.js",
+					"EmptySection": {
+						"FooterVisible": false
+					},
+					"EditMode": "None",
+					"StickyColumn": false
+				}
+			]
+		}
+	],
+	"_Type": "Page",
+	"DataSubscriptions": [
+		"LAMCharacteristicValues",
+		"MyEquipClassCharValues",
+		"MyFuncLocClassCharValues"
+	],
+	"_Name": "CharacteristicValueDetailsPage",
+	"Caption": "/SAPAssetManager/Rules/Classification/Characteristics/CharacteristicValueCaption.js",
+	"PrefersLargeCaption": true,
+	"OnReturning": "/SAPAssetManager/Rules/Classification/Characteristics/CharacteristicValueDetailsOnReturning.js",
+	"ActionBar": {
+		"Items": [
+			{
+				"_Name": "ActionBarItem0",
+				"Caption": "",
+				"SystemItem": "Edit",
+				"Position": "Right",
+				"IsIconCircular": false,
+				"Visible": "/SAPAssetManager/Rules/UserAuthorizations/Characteristics/EnableCharEdit.js",
+				"OnPress": "/SAPAssetManager/Actions/Classification/Characteristics/CharacteristicValueEditPopover.action"
+			}
+		],
+		"_Name": "ActionBar1"
+	}
+}

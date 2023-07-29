@@ -1,0 +1,47 @@
+{
+	"Header": {
+		"_Name": "SectionHeader0",
+		"UseTopPadding": false,
+		"Caption": "$(L,equipment)"
+	},
+	"Footer": {
+		"_Name": "SectionFooter0",
+		"Caption": "$(L,see_all)",
+		"AccessoryType": "disclosureIndicator",
+		"FooterStyle": "attribute",
+		"Visible": true,
+		"OnPress": "/SAPAssetManager/Rules/Equipment/EquipmentListViewNav.js",
+		"UseBottomPadding": false
+	},
+	"_Type": "Section.Type.ObjectTable",
+	"Target": {
+		"EntitySet": "{{#Property:@odata.id}}/Equipment",
+		"Service": "/SAPAssetManager/Services/AssetManager.service",
+		"QueryOptions": "$top=1&$select=ObjectStatus_Nav/SystemStatus_Nav/StatusText,EquipDesc,EquipId,FuncLocId,EquipType,EquipCategory,PlanningPlant,WorkCenter,FunctionalLocation/FuncLocDesc&$orderby=EquipId&$expand=ObjectStatus_Nav/SystemStatus_Nav,EquipDocuments,FunctionalLocation"
+	},
+	"Visible": false,
+	"EmptySection": {
+		"Caption": "$(L,no_equipment_available)",
+		"FooterVisible": false
+	},
+	"ObjectCell": {
+		"ContextMenu": {
+			"Items": [],
+			"PerformFirstActionWithFullSwipe": true
+		},
+		"Title": "#Property:EquipDesc",
+		"Subhead": "#Property:EquipId",
+		"Description": "/SAPAssetManager/Rules/Equipment/EquipmentTechnicalObjectId.js",
+		"StatusText": "#Property:ObjectStatus_Nav/#Property:SystemStatus_Nav/#Property:StatusText",
+		"PreserveIconStackSpacing": false,
+		"AccessoryType": "disclosureIndicator",
+		"Tags": [],
+		"OnPress": "/SAPAssetManager/Rules/Equipment/EquipmentDetailsNav.js"
+	},
+	"Search": {
+		"Placeholder": "$(L,search)",
+		"BarcodeScanner": true,
+		"Delay": 500,
+		"MinimumCharacterThreshold": 3
+	}
+}

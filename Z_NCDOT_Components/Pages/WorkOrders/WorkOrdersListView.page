@@ -1,0 +1,98 @@
+{
+	"Controls": [
+		{
+			"_Type": "Control.Type.SectionedTable",
+			"_Name": "SectionedTable",
+			"Sections": [
+				{
+					"Header": {
+						"_Name": "SectionHeader0",
+						"UseTopPadding": false
+					},
+					"_Type": "Section.Type.ObjectTable",
+					"Target": {
+						"EntitySet": "MyWorkOrderHeaders",
+						"Service": "/SAPAssetManager/Services/AssetManager.service",
+						"QueryOptions": "/SAPAssetManager/Rules/WorkOrders/ListView/WorkOrdersListViewQueryOptionWrapper.js"
+					},
+					"_Name": "WorkOrdersListSection",
+					"EmptySection": {
+						"Caption": "/SAPAssetManager/Rules/WorkOrders/NoWorkOrdersCaption.js",
+						"FooterVisible": false
+					},
+					"ObjectCell": {
+						"_Type": "Fragment",
+						"Fragment": "/SAPAssetManager/Pages/Fragments/WorkOrder/WorkOrderObjectCell.fragment",
+						"Properties": {
+							"Description": "/SAPAssetManager/Rules/WorkOrders/ListView/WorkOrderListViewDescription.js",
+							"ContextMenu": {
+								"PerformFirstActionWithFullSwipe": true,
+								"Items": "/SAPAssetManager/Rules/ContextMenuTable.js",
+								"LeadingItems": "/SAPAssetManager/Rules/ContextMenuLeadingItems.js",
+								"TrailingItems": "/SAPAssetManager/Rules/ContextMenuTrailingItems.js"
+							}
+						}
+					},
+					"Search": {
+						"Enabled": "/SAPAssetManager/Rules/WorkOrders/WorkOrdersSearchEnabled.js",
+						"Placeholder": "$(L,search)",
+						"BarcodeScanner": true,
+						"Delay": 500,
+						"MinimumCharacterThreshold": 3
+					}
+				}
+			],
+			"Filters": "/SAPAssetManager/Rules/WorkOrders/ListView/DefaultOrderByPriority.js"
+		}
+	],
+	"_Type": "Page",
+	"DataSubscriptions": "/SAPAssetManager/Rules/Common/DataSubscriptions.js",
+	"_Name": "WorkOrdersListViewPage",
+	"Caption": "/SAPAssetManager/Rules/WorkOrders/WorkOrderListViewCaption.js",
+	"PrefersLargeCaption": true,
+	"OnLoaded": "/SAPAssetManager/Rules/WorkOrders/ListView/WorkOrderListViewOnPageLoad.js",
+	"OnReturning": "/SAPAssetManager/Rules/WorkOrders/WorkOrderListViewOnReturning.js",
+	"ActionBar": {
+		"Items": [
+			"/SAPAssetManager/Pages/Fragments/SyncButton.fragment",
+			{
+				"_Name": "ActionBarItem0",
+				"Caption": "$(L,add)",
+				"SystemItem": "Add",
+				"Position": "Right",
+				"IsIconCircular": false,
+				"Visible": false,
+				"OnPress": "/SAPAssetManager/Rules/WorkOrders/CreateUpdate/WorkOrderCreateNav.js"
+			},
+			{
+				"_Name": "ActionBarItem1",
+				"Caption": "",
+				"Icon": "$(PLT,/SAPAssetManager/Images/menuicon.png,/SAPAssetManager/Images/menuicon.android.png)",
+				"Position": "Right",
+				"IsIconCircular": false,
+				"Visible": "/SAPAssetManager/Rules/Supervisor/SupervisorRole/IsSupervisorSectionVisibleForWO.js",
+				"OnPress": "/SAPAssetManager/Actions/Supervisor/SupervisorWorkOrderAddPopover.action"
+			},
+			{
+				"_Name": "Z_WoListToLemur",
+				"Caption": "Lemur WorkOrder List",
+				"Icon": "sap-icon://map",
+				"Position": "Right",
+				"IsIconCircular": false,
+				"IconText": "Lemur WorkOrder List",
+				"Visible": false,
+				"OnPress": "/Z_NCDOT_Components/Rules/LemurMap/SendListtoLemur/Z_WorkOrderSendListToLemurNav.js"
+			},
+			{
+				"_Name": "ActionBarItem2",
+				"Caption": "$(L,filter)",
+				"Icon": "$(PLT,'',/SAPAssetManager/Images/filter.android.png)",
+				"Position": "Right",
+				"IsIconCircular": false,
+				"Visible": "/SAPAssetManager/Rules/WorkOrders/WorkOrderListViewFilterVisible.js",
+				"OnPress": "/SAPAssetManager/Actions/WorkOrders/WorkOrderFilter.action"
+			}
+		],
+		"_Name": "ActionBar1"
+	}
+}

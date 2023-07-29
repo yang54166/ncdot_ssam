@@ -1,0 +1,15 @@
+{
+    "mdk.uieditor": {
+        "left": {
+            "visible": false
+        },
+        "right": {
+            "visible": true,
+            "width": 477
+        },
+        "device": "tablet"
+    },
+    "mdk.i18n": {
+        "displayLanguages": "i18n,i18n_en"
+    }
+}

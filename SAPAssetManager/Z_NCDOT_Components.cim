@@ -1,0 +1,242 @@
+{
+	"ApplicationName": "Z_NCDOT_Components",
+	"ProjectName": "Z_NCDOT_Components",
+	"IntegrationPoints": [
+		{
+			"Source": "/Z_NCDOT_Components/Pages/SideMenuDrawer.page",
+			"Target": "/SAPAssetManager/Pages/SideMenuDrawer.page"
+		},
+		{
+			"Source": "/Z_NCDOT_Components/Pages/FunctionalLocation/FunctionalLocationDetails.page",
+			"Target": "/SAPAssetManager/Pages/FunctionalLocation/FunctionalLocationDetails.page"
+		},
+		{
+			"Source": "/Z_NCDOT_Components/Pages/FunctionalLocation/FunctionalLocationListView.page",
+			"Target": "/SAPAssetManager/Pages/FunctionalLocation/FunctionalLocationListView.page"
+		},
+		{
+			"Source": "/Z_NCDOT_Components/Pages/Notifications/NotificationCreateUpdate.page",
+			"Target": "/SAPAssetManager/Pages/Notifications/NotificationCreateUpdate.page"
+		},
+		{
+			"Source": "/Z_NCDOT_Components/Pages/WorkOrders/WorkOrderCreateUpdate.page",
+			"Target": "/SAPAssetManager/Pages/WorkOrders/WorkOrderCreateUpdate.page"
+		},
+		{
+			"Source": "/Z_NCDOT_Components/Pages/WorkOrders/Operations/WorkOrderOperationDetails.page",
+			"Target": "/SAPAssetManager/Pages/WorkOrders/Operations/WorkOrderOperationDetails.page"
+		},
+		{
+			"Source": "/Z_NCDOT_Components/Pages/WorkOrders/Operations/WorkOrderOperationCreateUpdate.page",
+			"Target": "/SAPAssetManager/Pages/WorkOrders/Operations/WorkOrderOperationCreateUpdate.page"
+		},
+		{
+			"Source": "/Z_NCDOT_Components/Rules/FunctionalLocation/FunctionalLocationQueryOptions.js",
+			"Target": "/SAPAssetManager/Rules/FunctionalLocation/FunctionalLocationQueryOptions.js"
+		},
+		{
+			"Source": "/Z_NCDOT_Components/Rules/Notifications/NotificationsListViewQueryOption.js",
+			"Target": "/SAPAssetManager/Rules/Notifications/NotificationsListViewQueryOption.js"
+		},
+		{
+			"Source": "/Z_NCDOT_Components/Actions/FunctionalLocation/FunctionalLocationPopover.action",
+			"Target": "/SAPAssetManager/Actions/FunctionalLocation/FunctionalLocationPopover.action"
+		},
+		{
+			"Source": "/Z_NCDOT_Components/Rules/OverviewPage/OverviewOnPageReturning.js",
+			"Target": "/SAPAssetManager/Rules/OverviewPage/OverviewOnPageReturning.js"
+		},
+		{
+			"Source": "/Z_NCDOT_Components/Rules/OverviewPage/OverviewOnPageReturning.js",
+			"Target": "/SAPAssetManager/Rules/OverviewPage/OverviewOnPageReturning.js"
+		},
+		{
+			"Source": "/Z_NCDOT_Components/Pages/WorkOrders/Operations/WorkOrderOperationsListView.page",
+			"Target": "/SAPAssetManager/Pages/WorkOrders/Operations/WorkOrderOperationsListView.page"
+		},
+		{
+			"Source": "/Z_NCDOT_Components/Pages/Overview.page",
+			"Target": "/SAPAssetManager/Pages/Overview.page"
+		},
+		{
+			"Source": "/Z_NCDOT_Components/i18n/i18n.properties",
+			"Target": "/SAPAssetManager/i18n/i18n.properties"
+		},
+		{
+			"Source": "/Z_NCDOT_Components/i18n/i18n_en.properties",
+			"Target": "/SAPAssetManager/i18n/i18n_en.properties"
+		},
+		{
+			"Source": "/Z_NCDOT_Components/Pages/Notifications/NotificationDetails.page",
+			"Target": "/SAPAssetManager/Pages/Notifications/NotificationDetails.page"
+		},
+		{
+			"Source": "/Z_NCDOT_Components/Pages/WorkOrders/WorkOrderDetails.page",
+			"Target": "/SAPAssetManager/Pages/WorkOrders/WorkOrderDetails.page"
+		},
+		{
+			"Source": "/Z_NCDOT_Components/Pages/Notifications/NotificationsListView.page",
+			"Target": "/SAPAssetManager/Pages/Notifications/NotificationsListView.page"
+		},
+		{
+			"Source": "/Z_NCDOT_Components/Pages/WorkOrders/WorkOrdersListView.page",
+			"Target": "/SAPAssetManager/Pages/WorkOrders/WorkOrdersListView.page"
+		},
+		{
+			"Source": "/Z_NCDOT_Components/Actions/WorkOrders/WorkOrderDetailsAddPopover.action",
+			"Target": "/SAPAssetManager/Actions/WorkOrders/WorkOrderDetailsAddPopover.action"
+		},
+		{
+			"Source": "/Z_NCDOT_Components/Rules/Inventory/Validation/ShowValuationTypeField.js",
+			"Target": "/SAPAssetManager/Rules/Inventory/Validation/ShowValuationTypeField.js"
+		},
+		{
+			"Source": "/Z_NCDOT_Components/Rules/DeepLinks/DeepLinkConfig.js",
+			"Target": "/SAPAssetManager/Rules/DeepLinks/DeepLinkConfig.js"
+		},
+		{
+			"Source": "/Z_NCDOT_Components/Rules/DeepLinks/DeepLinkLibrary.js",
+			"Target": "/SAPAssetManager/Rules/DeepLinks/DeepLinkLibrary.js"
+		},
+		{
+			"Source": "/Z_NCDOT_Components/Actions/WorkOrders/CreateUpdate/WorkOrderCreate.action",
+			"Target": "/SAPAssetManager/Actions/WorkOrders/CreateUpdate/WorkOrderCreate.action"
+		},
+		{
+			"Source": "/Z_NCDOT_Components/Actions/WorkOrders/WorkOrderUpdate.action",
+			"Target": "/SAPAssetManager/Actions/WorkOrders/WorkOrderUpdate.action"
+		},
+		{
+			"Source": "/Z_NCDOT_Components/Actions/WorkOrders/Operations/WorkOrderOperationCreate.action",
+			"Target": "/SAPAssetManager/Actions/WorkOrders/Operations/WorkOrderOperationCreate.action"
+		},
+		{
+			"Source": "/Z_NCDOT_Components/Actions/WorkOrders/Operations/WorkOrderOperationUpdate.action",
+			"Target": "/SAPAssetManager/Actions/WorkOrders/Operations/WorkOrderOperationUpdate.action"
+		},
+		{
+			"Source": "/Z_NCDOT_Components/Rules/WorkOrders/CreateUpdate/WorkOrderCreateUpdateRequiredFields.js",
+			"Target": "/SAPAssetManager/Rules/WorkOrders/CreateUpdate/WorkOrderCreateUpdateRequiredFields.js"
+		},
+		{
+			"Source": "/Z_NCDOT_Components/Rules/WorkOrders/Operations/CreateUpdate/RequiredFields.js",
+			"Target": "/SAPAssetManager/Rules/WorkOrders/Operations/CreateUpdate/RequiredFields.js"
+		},
+		{
+			"Source": "/Z_NCDOT_Components/Rules/WorkOrders/WorkOrderLibrary.js",
+			"Target": "/SAPAssetManager/Rules/WorkOrders/WorkOrderLibrary.js"
+		},
+		{
+			"Source": "/Z_NCDOT_Components/Rules/WorkOrders/CreateUpdate/WorkOrderCreateUpdateOnCommit.js",
+			"Target": "/SAPAssetManager/Rules/WorkOrders/CreateUpdate/WorkOrderCreateUpdateOnCommit.js"
+		},
+		{
+			"Source": "/Z_NCDOT_Components/Rules/WorkOrders/CreateUpdate/WorkOrderCreateUpdateOnPageLoad.js",
+			"Target": "/SAPAssetManager/Rules/WorkOrders/CreateUpdate/WorkOrderCreateUpdateOnPageLoad.js"
+		},
+		{
+			"Source": "/Z_NCDOT_Components/Rules/WorkOrders/Operations/WorkOrderOperationLibrary.js",
+			"Target": "/SAPAssetManager/Rules/WorkOrders/Operations/WorkOrderOperationLibrary.js"
+		},
+		{
+			"Source": "/Z_NCDOT_Components/Rules/WorkOrders/CreateUpdate/WorkOrderCreateUpdateOnCommit.js",
+			"Target": "/SAPAssetManager/Rules/WorkOrders/CreateUpdate/WorkOrderCreateUpdateOnCommit.js"
+		},
+		{
+			"Source": "/Z_NCDOT_Components/Rules/WorkOrders/Operations/CreateUpdate/WorkOrderOperationCreateUpdateOnChange.js",
+			"Target": "/SAPAssetManager/Rules/WorkOrders/Operations/CreateUpdate/WorkOrderOperationCreateUpdateOnChange.js"
+		},
+		{
+			"Source": "/Z_NCDOT_Components/Rules/WorkOrders/Operations/CreateUpdate/WorkOrderOperationCreateUpdateOnPageLoad.js",
+			"Target": "/SAPAssetManager/Rules/WorkOrders/Operations/CreateUpdate/WorkOrderOperationCreateUpdateOnPageLoad.js"
+		},
+		{
+			"Source": "/Z_NCDOT_Components/Rules/WorkOrders/WorkOrderHighPrioritySectionQueryOptions.js",
+			"Target": "/SAPAssetManager/Rules/WorkOrders/WorkOrderHighPrioritySectionQueryOptions.js"
+		},
+		{
+			"Source": "/Z_NCDOT_Components/Pages/Fragments/WorkOrder/WorkOrderObjectCell.fragment",
+			"Target": "/SAPAssetManager/Pages/Fragments//WorkOrder/WorkOrderObjectCell.fragment"
+		},
+		{
+			"Source": "/Z_NCDOT_Components/Rules/Classification/Characteristics/LAM/LAMCharValueFormat.js",
+			"Target": "/SAPAssetManager/Rules/Classification/Characteristics/LAM/LAMCharValueFormat.js"
+		},
+		{
+			"Source": "/Z_NCDOT_Components/Pages/Characteristics/Classification/CharacteristicValueDetails.page",
+			"Target": "/SAPAssetManager/Pages/Classification/Characteristics/CharacteristicValueDetails.page"
+		},
+		{
+			"Source": "/Z_NCDOT_Components/Rules/WorkOrders/Operations/WorkOrderOperationsListViewQueryOption.js",
+			"Target": "/SAPAssetManager/Rules/WorkOrders/Operations/WorkOrderOperationsListViewQueryOption.js"
+		},
+		{
+			"Source": "/Z_NCDOT_Components/Rules/WorkOrders/Operations/WorkOrderOperationsListViewQueryOptionWrapper.js",
+			"Target": "/SAPAssetManager/Rules/WorkOrders/Operations/WorkOrderOperationsListViewQueryOptionWrapper.js"
+		},
+		{
+			"Source": "/Z_NCDOT_Components/Rules/WorkOrders/ListView/WorkOrdersListViewQueryOption.js",
+			"Target": "/SAPAssetManager/Rules/WorkOrders/ListView/WorkOrdersListViewQueryOption.js"
+		},
+		{
+			"Source": "/Z_NCDOT_Components/Rules/WorkOrders/ListView/WorkOrdersListViewQueryOptionWrapper.js",
+			"Target": "/SAPAssetManager/Rules/WorkOrders/ListView/WorkOrdersListViewQueryOptionWrapper.js"
+		},
+		{
+			"Source": "/Z_NCDOT_Components/Styles/Styles.less",
+			"Target": "/SAPAssetManager/Styles/Styles.less"
+		},
+		{
+			"Source": "/Z_NCDOT_Components/Rules/WorkOrders/Operations/WorkOrderOperationListViewOnLoad.js",
+			"Target": "/SAPAssetManager/Rules/WorkOrders/Operations/WorkOrderOperationListViewOnLoad.js"
+		},
+		{
+			"Source": "/Z_NCDOT_Components/Rules/WorkOrders/Operations/OperationsListViewNav.js",
+			"Target": "/SAPAssetManager/Rules/WorkOrders/Operations/OperationsListViewNav.js"
+		},
+		{
+			"Source": "/Z_NCDOT_Components/Rules/WorkOrders/Operations/CreateUpdate/WorkOrderOperationCreateUpdateLinks.js",
+			"Target": "/SAPAssetManager/Rules/WorkOrders/Operations/CreateUpdate/WorkOrderOperationCreateUpdateLinks.js"
+		},
+		{
+			"Source": "/Z_NCDOT_Components/Rules/WorkOrders/WorkOrdersListViewNav.js",
+			"Target": "/SAPAssetManager/Rules/WorkOrders/WorkOrdersListViewNav.js"
+		},
+		{
+			"Source": "/Z_NCDOT_Components/Pages/Notifications/NotificationDetails.page",
+			"Target": "/SAPAssetManager/Pages/Notifications/NotificationDetails.page"
+		},
+		{
+			"Source": "/Z_NCDOT_Components/Pages/Notifications/NotificationItemDetails.page",
+			"Target": "/SAPAssetManager/Pages/Notifications/NotificationItemDetails.page"
+		},
+		{
+			"Source": "/Z_NCDOT_Components/Actions/Notifications/Item/NotificationItemDetailsPopover.action",
+			"Target": "/SAPAssetManager/Actions/Notifications/Item/NotificationItemDetailsPopover.action"
+		},
+		{
+			"Source": "/Z_NCDOT_Components/Actions/Notifications/NotificationDetailsPopover.action",
+			"Target": "/SAPAssetManager/Actions/Notifications/NotificationDetailsPopover.action"
+		},
+		{
+			"Source": "/Z_NCDOT_Components/Rules/Notifications/Item/Details/DamageGroupLabel.js",
+			"Target": "/SAPAssetManager/Rules/Notifications/Item/Details/DamageGroupLabel.js"
+		},
+		{
+			"Source": "/Z_NCDOT_Components/Rules/Notifications/Item/Details/DamageLabel.js",
+			"Target": "/SAPAssetManager/Rules/Notifications/Item/Details/DamageLabel.js"
+		},
+		{
+			"Source": "/Z_NCDOT_Components/Rules/Notifications/Item/Details/PartGroupLabel.js",
+			"Target": "/SAPAssetManager/Rules/Notifications/Item/Details/PartGroupLabel.js"
+		},
+		{
+			"Source": "/Z_NCDOT_Components/Rules/Notifications/Item/Details/PartLabel.js",
+			"Target": "/SAPAssetManager/Rules/Notifications/Item/Details/PartLabel.js"
+		},
+		{
+			"Source": "/Z_NCDOT_Components/Pages/WorkOrders/CompleteWorkOrder.page",
+			"Target": "/SAPAssetManager/Pages/WorkOrders/CompleteWorkOrder.page"
+		}
+	]
+}

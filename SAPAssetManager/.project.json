@@ -1,0 +1,23 @@
+{
+	"Onboarding": {
+		"Schema": "sapmobilesvcs",
+		"TimeZone": "UTC",
+		"URL": ""
+	},
+	"CF": {
+		"Target": "https://api.cf.us21.hana.ondemand.com",
+		"Organization": "5ee37095-718d-4f5f-bbc7-6cd4cde3ae94",
+		"Space": "badfe1be-2cb1-42b1-ac98-b76ea49bfb82"
+	},
+	"MobileService": {
+		"Type": "standard",
+		"AdminAPI": "https://mobile-service-cockpit-api.cfapps.us21.hana.ondemand.com/cockpit/v1/org/5ee37095-718d-4f5f-bbc7-6cd4cde3ae94/space/badfe1be-2cb1-42b1-ac98-b76ea49bfb82",
+		"AppId": "SSAM2305Helen",
+		"Destination": []
+	},
+	"Build": {
+		"SourceMap": true,
+		"TSTarget": "es6",
+		"WMF": true
+	}
+}

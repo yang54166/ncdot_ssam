@@ -1,0 +1,73 @@
+{
+	"ActionBar": {
+		"Items": [
+			{
+				"Position": "Left",
+				"SystemItem": "Cancel",
+				"OnPress": "/SAPAssetManager/Actions/Page/CancelPage.action"
+			},
+			{
+				"Position": "Right",
+				"SystemItem": "/SAPAssetManager/Rules/Filter/FilterSystemItem.js",
+				"Caption": "/SAPAssetManager/Rules/Filter/FilterText.js",
+				"OnPress": "/SAPAssetManager/Rules/Filter/FilterDone.js"
+			}
+		]
+	},
+	"Caption": "$(L,filter)",
+	"Result": [
+		"#Page:MeasuringPointsListFilterPage/#Control:CounterFilter/#Value",
+		"#Page:MeasuringPointsListFilterPage/#Control:ValCodeFilter/#Value"
+	],
+	"Controls": [
+		{
+			"_Type": "Control.Type.SectionedTable",
+			"Sections": [
+				{
+					"Controls": [
+						{
+							"AllowMultipleSelection": true,
+							"AllowEmptySelection": true,
+							"Caption": "$(L,counter)",
+							"FilterProperty": "/SAPAssetManager/Rules/Measurements/MeasuringPointCounterFilter.js",
+							"_Name": "CounterFilter",
+							"_Type": "Control.Type.FormCell.Filter",
+							"IsEditable": true
+						},
+						{
+							"AllowMultipleSelection": true,
+							"AllowEmptySelection": true,
+							"Caption": "$(L,valuation_code)",
+							"FilterProperty": "/SAPAssetManager/Rules/Measurements/MeasuringPointValCodeFilter.js",
+							"_Name": "ValCodeFilter",
+							"_Type": "Control.Type.FormCell.Filter",
+							"IsEditable": true
+						}
+					],
+					"_Type": "Section.Type.FormCell",
+					"_Name": "FormCellContainerSectionFormCell0"
+				},
+				{
+					"Controls": [
+						{
+							"Title": "$(L,reset_all)",
+							"OnPress": "/SAPAssetManager/Rules/Filter/FilterReset.js",
+							"_Type": "Control.Type.FormCell.Button",
+							"ButtonType": "Text",
+							"Semantic": "Tint",
+							"_Name": "ResetButton",
+							"Alignment": "/SAPAssetManager/Rules/Common/Platform/ModalButtonAlign.js"
+						}
+					],
+					"_Type": "Section.Type.FormCell",
+					"_Name": "FormCellContainerSectionFormCell1"
+				}
+			],
+			"_Name": "FormCellContainer"
+		}
+	],
+	"_Type": "Page",
+	"_Name": "MeasuringPointsListFilterPage",
+	"OnLoaded": "/SAPAssetManager/Rules/Filter/FilterOnLoaded.js",
+	"PrefersLargeCaption": true
+}

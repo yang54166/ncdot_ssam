@@ -1,0 +1,44 @@
+{
+	"Caption": "$(L,create_passphrase)",
+	"ActionBar": {
+		"Items": [
+			{
+				"Position": "Left",
+				"SystemItem": "Cancel",
+				"OnPress": "/SAPAssetManager/Actions/Page/CancelPage.action",
+				"Visible": "/SAPAssetManager/Rules/DigitalSignature/TOTPCancelIsVisible.js"
+			},
+			{
+				"Position": "Right",
+				"Caption": "$(L, next)",
+				"OnPress": "/SAPAssetManager/Rules/DigitalSignature/TOTPPassphraseValidation.js"
+			}
+		]
+	},
+	"Controls": [
+		{
+			"_Type": "Control.Type.SectionedTable",
+			"Sections": [
+				{
+					"Controls": [
+						{
+							"_Type": "Control.Type.FormCell.SimpleProperty",
+							"_Name": "passphrase",
+							"IsEditable": true,
+							"Caption": "$(L, passphrase)",
+							"KeyboardType": "NumberPassword",
+							"PlaceHolder": "$(L, enter_4_to_6_digit_number)",
+							"HelperText": "$(L,passphrase_totp_help_text)"
+						}
+					],
+					"_Type": "Section.Type.FormCell",
+					"_Name": "FormCellContainer0SectionFormCell0"
+				}
+			],
+			"_Name": "FormCellContainer0"
+		}
+	],
+	"_Name": "PassphraseTOTP",
+	"_Type": "Page",
+	"PrefersLargeCaption": true
+}

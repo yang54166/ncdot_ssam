@@ -1,0 +1,47 @@
+{
+	"Caption": "$(L,add_documents)",
+	"OnLoaded": "/SAPAssetManager/Rules/Documents/Create/DocumentCreateBDSOnLoaded.js",
+	"ActionBar": {
+		"Items": [
+			{
+				"Position": "Right",
+				"SystemItem": "$(PLT,'Done','')",
+				"Caption": "/SAPAssetManager/Rules/Common/Platform/DoneText.js",
+				"OnPress": "/SAPAssetManager/Rules/Documents/DocumentValidationAndClosePage.js"
+			},
+			{
+				"Position": "Left",
+				"SystemItem": "Cancel",
+				"OnPress": "/SAPAssetManager/Rules/Common/CheckForChangesBeforeCancel.js"
+			}
+		]
+	},
+	"Controls": [
+		{
+			"_Type": "Control.Type.SectionedTable",
+			"Sections": [
+				{
+					"Controls": [
+						{
+							"Caption": "$(L,description)",
+							"PlaceHolder": "$(L,description)",
+							"Value": "",
+							"IsEditable": true,
+							"IsVisible": true,
+							"IsAutoResizing": true,
+							"_Name": "AttachmentDescription",
+							"_Type": "Control.Type.FormCell.SimpleProperty"
+						},
+						"/SAPAssetManager/Pages/Fragments/Documents/DocumentFormCell.fragment"
+					],
+					"_Type": "Section.Type.FormCell",
+					"_Name": "FormCellContainerSectionFormCell0"
+				}
+			],
+			"_Name": "FormCellContainer"
+		}
+	],
+	"_Type": "Page",
+	"_Name": "DocumentCreate",
+	"PrefersLargeCaption": true
+}

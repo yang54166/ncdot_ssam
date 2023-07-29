@@ -1,0 +1,75 @@
+{
+	"ActionBar": {
+		"Items": [
+			{
+				"Position": "Left",
+				"SystemItem": "Cancel",
+				"OnPress": "/SAPAssetManager/Actions/Page/CancelPage.action"
+			},
+			{
+				"Position": "Right",
+				"SystemItem": "/SAPAssetManager/Rules/Filter/FilterSystemItem.js",
+				"Caption": "/SAPAssetManager/Rules/Filter/FilterText.js",
+				"OnPress": "/SAPAssetManager/Rules/Filter/FilterDone.js"
+			}
+		]
+	},
+	"Caption": "$(L,filter)",
+	"Result": [
+		"#Page:PRTDocumentFilterPage/#Control:SortFilter/#Value"
+	],
+	"Controls": [
+		{
+			"_Type": "Control.Type.SectionedTable",
+			"Sections": [
+				{
+					"Controls": [
+						{
+							"AllowEmptySelection": false,
+							"Caption": "$(L,sort_by)",
+							"SortByItems": [
+								{
+									"ReturnValue": "PRTDocument/FileName",
+									"DisplayValue": "$(L,file_name)"
+								},
+								{
+									"ReturnValue": "PRTDocument/Description",
+									"DisplayValue": "$(L,description)"
+								},
+								{
+									"ReturnValue": "PRTDocument/FileSize",
+									"DisplayValue": "$(L,file_size)"
+								}
+							],
+							"_Name": "SortFilter",
+							"_Type": "Control.Type.FormCell.Sorter",
+							"IsEditable": true
+						}
+					],
+					"_Type": "Section.Type.FormCell",
+					"_Name": "FormCellContainerSectionFormCell0"
+				},
+				{
+					"Controls": [
+						{
+							"Title": "$(L,reset_all)",
+							"OnPress": "/SAPAssetManager/Rules/Filter/FilterReset.js",
+							"_Type": "Control.Type.FormCell.Button",
+							"ButtonType": "Text",
+							"Semantic": "Tint",
+							"_Name": "ResetButton",
+							"Alignment": "/SAPAssetManager/Rules/Common/Platform/ModalButtonAlign.js"
+						}
+					],
+					"_Type": "Section.Type.FormCell",
+					"_Name": "FormCellContainerSectionFormCell1"
+				}
+			],
+			"_Name": "FormCellContainer"
+		}
+	],
+	"_Type": "Page",
+	"_Name": "PRTDocumentFilterPage",
+	"OnLoaded": "/SAPAssetManager/Rules/Filter/FilterOnLoaded.js",
+	"PrefersLargeCaption": true
+}

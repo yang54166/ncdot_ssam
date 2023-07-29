@@ -1,0 +1,35 @@
+{
+	"Caption": "$(L, add_attachment)",
+	"OnLoaded": "/SAPAssetManager/Rules/Equipment/AddEditDocumentPageOnLoaded.js",
+	"ActionBar": {
+		"Items": [
+			{
+				"Position": "Right",
+				"SystemItem": "$(PLT,'Done','')",
+				"Caption": "/SAPAssetManager/Rules/Common/Platform/DoneText.js",
+				"OnPress": "/SAPAssetManager/Rules/InspectionCharacteristics/Update/InspectionCharacteristicsAddOrDeleteAttachment.js"
+			}
+		]
+	},
+	"Controls": [
+		{
+			"_Type": "Control.Type.SectionedTable",
+			"Sections": [
+				{
+					"Controls": [
+						{
+							"_Type": "Fragment",
+							"Fragment": "/SAPAssetManager/Pages/Fragments/Documents/DocumentFormCell.fragment"
+						}
+					],
+					"_Type": "Section.Type.FormCell",
+					"_Name": "FormCellContainerSectionFormCell0"
+				}
+			],
+			"_Name": "FormCellContainer"
+		}
+	],
+	"_Type": "Page",
+	"_Name": "InspectionCharacteristicsAddEditAttachmentsPage",
+	"PrefersLargeCaption": true
+}

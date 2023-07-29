@@ -1,0 +1,87 @@
+{
+	"ActionBar": {
+		"Items": [
+			{
+				"Position": "Left",
+				"SystemItem": "Cancel",
+				"OnPress": "/SAPAssetManager/Actions/Page/CancelPage.action"
+			},
+			{
+				"Position": "Right",
+				"SystemItem": "/SAPAssetManager/Rules/Filter/FilterSystemItem.js",
+				"Caption": "/SAPAssetManager/Rules/Filter/FilterText.js",
+				"OnPress": "/SAPAssetManager/Rules/Filter/FilterDone.js"
+			}
+		]
+	},
+	"Caption": "$(L,filter)",
+	"Result": [
+		"#Page:RouteFilterPage/#Control:SortFilter/#Value",
+		"#Page:RouteFilterPage/#Control:MobileStatusFilter/#Value"
+	],
+	"Controls": [
+		{
+			"_Type": "Control.Type.SectionedTable",
+			"Sections": [
+				{
+					"Controls": [
+						{
+							"AllowEmptySelection": false,
+							"Caption": "$(L,sort_by)",
+							"SortByItems": [
+								{
+									"ReturnValue": "Description",
+									"DisplayValue": "$(L,description)"
+								},
+								{
+									"ReturnValue": "RouteID",
+									"DisplayValue": "$(L,fow_route_id)"
+								}
+							],
+							"_Name": "SortFilter",
+							"_Type": "Control.Type.FormCell.Sorter",
+							"IsEditable": true
+						}
+					],
+					"_Type": "Section.Type.FormCell",
+					"_Name": "FormCellContainerSectionFormCell0"
+				},
+				{
+					"Controls": [
+						{
+							"AllowMultipleSelection": true,
+							"AllowEmptySelection": true,
+							"Caption": "$(L,mobile_status)",
+							"FilterProperty": "/SAPAssetManager/Rules/FOW/Routes/MobileStatusFilter.js",
+							"_Name": "MobileStatusFilter",
+							"_Type": "Control.Type.FormCell.Filter",
+							"IsEditable": true
+						}
+					],
+					"_Type": "Section.Type.FormCell",
+					"_Name": "FormCellContainerSectionFormCell1"
+				},
+				{
+					"Controls": [
+						{
+							"Title": "$(L,reset_all)",
+							"OnPress": "/SAPAssetManager/Rules/Filter/FilterReset.js",
+							"_Type": "Control.Type.FormCell.Button",
+							"ButtonType": "Text",
+							"Semantic": "Tint",
+							"_Name": "ResetButton",
+							"Alignment": "/SAPAssetManager/Rules/Common/Platform/ModalButtonAlign.js"
+						}
+					],
+					"_Type": "Section.Type.FormCell",
+					"_Name": "FormCellContainerSectionFormCell2"
+				}
+			],
+			"_Name": "FormCellContainer"
+		}
+	],
+	"_Type": "Page",
+	"_Name": "RouteFilterPage",
+	"OnLoaded": "/SAPAssetManager/Rules/Filter/FilterOnLoaded.js",
+	"PrefersLargeCaption": true
+}

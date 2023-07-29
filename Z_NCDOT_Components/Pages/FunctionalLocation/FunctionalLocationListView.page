@@ -1,0 +1,86 @@
+{
+	"Controls": [
+		{
+			"_Type": "Control.Type.SectionedTable",
+			"_Name": "SectionedTable",
+			"Sections": [
+				{
+					"Header": {
+						"_Name": "SectionHeader0",
+						"UseTopPadding": false
+					},
+					"_Type": "Section.Type.ObjectTable",
+					"Target": {
+						"EntitySet": "MyFunctionalLocations",
+						"Service": "/SAPAssetManager/Services/AssetManager.service",
+						"QueryOptions": "/SAPAssetManager/Rules/FunctionalLocation/FunctionalLocationQueryOptions.js"
+					},
+					"_Name": "FunctionalLocationListView",
+					"EmptySection": {
+						"Caption": "$(L,no_functional_location_available)",
+						"FooterVisible": false
+					},
+					"ObjectCell": {
+						"_Type": "Fragment",
+						"Fragment": "/SAPAssetManager/Pages/Fragments/FunctionalLocation/FunctionalLocationObjectCell.fragment",
+						"Properties": {
+							"ContextMenu": {
+								"PerformFirstActionWithFullSwipe": true,
+								"Items": "/SAPAssetManager/Rules/ContextMenuTable.js",
+								"LeadingItems": "/SAPAssetManager/Rules/ContextMenuLeadingItems.js",
+								"TrailingItems": "/SAPAssetManager/Rules/ContextMenuTrailingItems.js"
+							}
+						}
+					},
+					"Search": {
+						"Enabled": true,
+						"Placeholder": "$(L,search)",
+						"BarcodeScanner": true,
+						"Delay": 500,
+						"MinimumCharacterThreshold": 3
+					}
+				}
+			]
+		}
+	],
+	"_Type": "Page",
+	"DataSubscriptions": [
+		"MyFuncLocDocuments"
+	],
+	"_Name": "FunctionalLocationListViewPage",
+	"Caption": "/SAPAssetManager/Rules/FunctionalLocation/FunctionalLocationCaption.js",
+	"PrefersLargeCaption": true,
+	"ActionBar": {
+		"Items": [
+			"/SAPAssetManager/Pages/Fragments/SyncButton.fragment",
+			{
+				"_Name": "Z_FunclocListToLemur",
+				"Caption": "Item",
+				"Icon": "sap-icon://map",
+				"Position": "Right",
+				"IsIconCircular": false,
+				"IconText": "Functional Location List",
+				"Visible": false,
+				"OnPress": "/Z_NCDOT_Components/Rules/LemurMap/SendListtoLemur/Z_FlocSendListToLemurNav.js"
+			},
+			{
+				"_Name": "ActionBarItem0",
+				"Caption": "$(L,filter)",
+				"Icon": "$(PLT,'',/SAPAssetManager/Images/filter.android.png)",
+				"Position": "Right",
+				"IsIconCircular": false,
+				"OnPress": "/SAPAssetManager/Actions/FunctionalLocation/FunctionalLocationFilter.action"
+			},
+			{
+				"_Name": "ActionBarItem1",
+				"Caption": "$(L,add)",
+				"SystemItem": "Add",
+				"Position": "Right",
+				"IsIconCircular": false,
+				"Visible": "/SAPAssetManager/Rules/UserAuthorizations/FunctionalLocations/EnableFunctionalLocationCreate.js",
+				"OnPress": "/SAPAssetManager/Rules/FunctionalLocation/CreateUpdate/FunctionalLocationCreateNav.js"
+			}
+		],
+		"_Name": "ActionBar1"
+	}
+}

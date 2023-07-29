@@ -1,0 +1,93 @@
+{
+	"Controls": [
+		{
+			"_Type": "Control.Type.SectionedTable",
+			"_Name": "SectionedTable",
+			"Sections": [
+				{
+					"Header": {
+						"_Name": "SectionHeader0",
+						"UseTopPadding": false
+					},
+					"_Type": "Section.Type.ObjectTable",
+					"Target": {
+						"EntitySet": "/SAPAssetManager/Rules/Notifications/NotificationEntitySet.js",
+						"Service": "/SAPAssetManager/Services/AssetManager.service",
+						"QueryOptions": "/SAPAssetManager/Rules/Notifications/NotificationsListViewQueryOption.js"
+					},
+					"_Name": "NotificationsList",
+					"EmptySection": {
+						"Caption": "$(L,no_notifications_available)",
+						"FooterVisible": false
+					},
+					"ObjectCell": {
+						"ContextMenu": {
+							"PerformFirstActionWithFullSwipe": true,
+							"Items": "/SAPAssetManager/Rules/ContextMenuTable.js",
+							"LeadingItems": "/SAPAssetManager/Rules/ContextMenuLeadingItems.js",
+							"TrailingItems": "/SAPAssetManager/Rules/ContextMenuTrailingItems.js"
+						},
+						"Title": "{{#Property:NotificationType}} - {{#Property:NotificationDescription}} ",
+						"Subhead": "/Z_NCDOT_Components/Rules/Notifications/Z_NotificationFormatNotificationNbrFloc.js",
+						"Footnote": "/SAPAssetManager/Rules/Notifications/ListView/NotificationsListViewFormat.js",
+						"StatusText": "/SAPAssetManager/Rules/Notifications/ListView/NotificationsListViewFormat.js",
+						"SubstatusText": "/SAPAssetManager/Rules/Notifications/ListView/NotificationsListViewFormat.js",
+						"PreserveIconStackSpacing": true,
+						"AccessoryType": "disclosureIndicator",
+						"Icons": "/SAPAssetManager/Rules/Notifications/ListView/NotificationListViewIconImages.js",
+						"Tags": [],
+						"OnPress": "/SAPAssetManager/Rules/Notifications/Details/NotificationDetailsNav.js",
+						"Styles": {
+							"StatusText": "/SAPAssetManager/Rules/Priority/NotificationPriorityStatusStyle.js"
+						}
+					},
+					"Search": {
+						"Enabled": "/SAPAssetManager/Rules/Notifications/NotificationsSearchEnabled.js",
+						"Placeholder": "$(L,search)",
+						"BarcodeScanner": true,
+						"Delay": 500,
+						"MinimumCharacterThreshold": 3
+					}
+				}
+			]
+		}
+	],
+	"_Type": "Page",
+	"DataSubscriptions": "/SAPAssetManager/Rules/Common/DataSubscriptions.js",
+	"_Name": "NotificationsListViewPage",
+	"Caption": "/SAPAssetManager/Rules/Notifications/ListView/NotificationListSetCaption.js",
+	"PrefersLargeCaption": true,
+	"ActionBar": {
+		"Items": [
+			"/SAPAssetManager/Pages/Fragments/SyncButton.fragment",
+			{
+				"_Name": "ActionBarItem0",
+				"Caption": "$(L,add)",
+				"SystemItem": "Add",
+				"Position": "Right",
+				"IsIconCircular": false,
+				"Visible": "/SAPAssetManager/Rules/UserAuthorizations/Notifications/EnableNotificationCreate.js",
+				"OnPress": "/SAPAssetManager/Rules/Notifications/CreateUpdate/NotificationCreateChangeSetNav.js"
+			},
+			{
+				"_Name": "Z_NotificationListToLemur",
+				"Caption": "Lemur Notification List",
+				"Icon": "sap-icon://map",
+				"Position": "Right",
+				"IsIconCircular": false,
+				"IconText": "Lemur Notification List",
+				"Visible": false,
+				"OnPress": "/Z_NCDOT_Components/Rules/LemurMap/SendListtoLemur/Z_NotificationSendListToLemurNav.js"
+			},
+			{
+				"_Name": "ActionBarItem1",
+				"Caption": "$(L,filter)",
+				"Icon": "$(PLT,'',/SAPAssetManager/Images/filter.android.png)",
+				"Position": "Right",
+				"IsIconCircular": false,
+				"OnPress": "/SAPAssetManager/Actions/Notifications/NotificationFilter.action"
+			}
+		],
+		"_Name": "ActionBar1"
+	}
+}

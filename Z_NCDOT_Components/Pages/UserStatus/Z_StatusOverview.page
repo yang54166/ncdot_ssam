@@ -1,0 +1,58 @@
+{
+	"Controls": [
+		{
+			"_Type": "Control.Type.SectionedTable",
+			"_Name": "SectionedTable0",
+			"Sections": [
+				{
+					"ObjectHeader": {
+						"Tags": [],
+						"Subhead": "/Z_NCDOT_Components/Rules/UserStatus/Z_UserStatusFormatStatusProfileDisplay.js",
+						"HeadlineText": "$(L,'statusProfile')",
+						"StatusPosition": "Stacked",
+						"StatusImagePosition": "Leading",
+						"SubstatusImagePosition": "Leading"
+					},
+					"_Type": "Section.Type.ObjectHeader",
+					"_Name": "SectionObjectHeader0",
+					"Visible": true
+				}
+			]
+		},
+		{
+			"_Type": "Control.Type.Tabs",
+			"_Name": "TabsControl",
+			"Items": [
+				{
+					"_Type": "Control.Type.TabItem",
+					"Caption": "$(L,status_nbr)",
+					"PageToOpen": "/Z_NCDOT_Components/Pages/UserStatus/Z_UserStatusSingleSelectDisplay.page",
+					"_Name": "ZStatusNbrTab"
+				},
+				{
+					"_Type": "Control.Type.TabItem",
+					"Caption": "$(L, status_multi)",
+					"PageToOpen": "/Z_NCDOT_Components/Pages/UserStatus/Z_UserStatusMultiSelectDisplay.page",
+					"_Name": "ZStatusNoNbrTab"
+				}
+			],
+			"Position": "Top"
+		}
+	],
+	"_Type": "Page",
+	"_Name": "ZStatusOverview",
+	"Caption": "$(L,user_status)",
+	"ActionBar": {
+		"Items": [
+			{
+				"_Name": "ActionBarItem0",
+				"Caption": "Edit",
+				"Position": "Right",
+				"IsIconCircular": false,
+				"Visible": "/Z_NCDOT_Components/Rules/UserStatus/Z_UserStatusCheckAssignedProfile.js",
+				"OnPress": "/Z_NCDOT_Components/Actions/UserStatus/Z_UserStatusUpdateNav.action"
+			}
+		],
+		"_Name": "ActionBar1"
+	}
+}
