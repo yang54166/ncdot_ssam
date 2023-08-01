@@ -1,0 +1,72 @@
+{
+	"Controls": [
+		{
+			"_Type": "Control.Type.SectionedTable",
+			"_Name": "SectionedTable0",
+			"Sections": [
+				{
+					"Header": {
+						"_Name": "SectionHeader1",
+						"UseTopPadding": true,
+						"Caption": " "
+					},
+					"_Type": "Section.Type.ObjectTable",
+					"DataSubscriptions": [
+						"PMMobileStatuses"
+					],
+					"Target": {
+						"Service": "/SAPAssetManager/Services/AssetManager.service",
+						"EntitySet": "UserStatuses",
+						"QueryOptions": "/Z_NCDOT_Components/Rules/UserStatus/Z_UserStatusNbrQueryOptions.js"
+					},
+					"_Name": "SectionObjectTable0",
+					"Visible": true,
+					"EmptySection": {
+						"FooterVisible": false
+					},
+					"ObjectCell": {
+						"ContextMenu": {
+							"Items": [],
+							"PerformFirstActionWithFullSwipe": true
+						},
+						"Title": "{Status}",
+						"Subhead": "{StatusText}",
+						"Description": "{StatusProfile}",
+						"DisplayDescriptionInMobile": true,
+						"StatusText": "{ZZStatusNbr}",
+						"PreserveIconStackSpacing": true,
+						"AccessoryType": "none",
+						"Icons": "/Z_NCDOT_Components/Rules/UserStatus/Z_UserStatusFormatSelectIcon.js",
+						"Tags": [
+							{
+								"Text": ""
+							}
+						],
+						"AvatarStack": {
+							"Avatars": []
+						},
+						"AvatarGrid": {
+							"Avatars": []
+						},
+						"OnPress": "/Z_NCDOT_Components/Rules/UserStatus/Z_UserStatusEvalSelectedStatusNumbered.js",
+						"Selected": "/Z_NCDOT_Components/Rules/UserStatus/Z_UserStatusDisplayStatusSelected.js"
+					},
+					"DataPaging": {
+						"ShowLoadingIndicator": false,
+						"PageSize": 50
+					},
+					"HighlightSelectedItem": true,
+					"Selection": {
+						"Mode": "None",
+						"LongPressToEnable": "None",
+						"ExitOnLastDeselect": false
+					}
+				}
+			]
+		}
+	],
+	"_Type": "Page",
+	"_Name": "Z_UserStatusSingleUpdate",
+	"PrefersLargeCaption": true,
+	"OnLoaded": "/Z_NCDOT_Components/Rules/UserStatus/Z_UserStatusUpdateOnLoad.js"
+}
